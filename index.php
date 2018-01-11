@@ -8,7 +8,6 @@ function listaEjemplos()
     while ($fichero = readdir($dir)) {
         if ($fichero != "." && $fichero != "..")
             $ejemplos[] = substr($fichero, 0, -4);
-
     }
     closedir($dir);
     return $ejemplos;
@@ -60,15 +59,17 @@ function listaEjemplos()
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#about">Acerca de mi</a>
-            </li>
+
             <?php
             // recorrer el array con los ficheros ejemplo
-            foreach (listaEjemplos() as $ficheroEjemplo)
+
+            foreach (listaEjemplos() as $ficheroEjemplo){
+                ?>
+               <li class="nav-item">
+                   <a class="nav-link js-scroll-trigger" href="?seccion=<?php echo $ficheroEjemplo.".php" ?>"><?php echo $ficheroEjemplo ?></a>             </li>
+            <?php } ?>
 
 
-            ?>
 
             <!-- <li class="nav-item">
                  <a class="nav-link js-scroll-trigger" href="?seccion=1">Formulario</a>
@@ -93,7 +94,7 @@ function listaEjemplos()
 <div class="container-fluid p-0">
     <?php
     if (isset($_GET['seccion']) && !empty($_GET['seccion'])) {
-        include("ejemplo" . $_GET['seccion'] . ".php");
+        include("ejemplos/" . $_GET['seccion'] );
     }
 
 
