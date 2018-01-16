@@ -5,9 +5,10 @@ function listaEjemplos()
     $dir = opendir("./ejemplos");
 
     while ($fichero = readdir($dir)) {
-        if ($fichero != "." && $fichero != "..") {
-            $ejemplos[] = substr($fichero , 0, -4);
-        }
+
+            if (substr($fichero, -3) == "php")
+                $ejemplos[] = substr($fichero, 0, -4);
+           
     }
     closedir($dir);
     return $ejemplos;
