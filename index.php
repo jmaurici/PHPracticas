@@ -1,6 +1,7 @@
 <?php
 function listaEjemplos()
 {
+    //
 // abrir directorio de ejemplos
     $dir = opendir("./ejemplos");
 
