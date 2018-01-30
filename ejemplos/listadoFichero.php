@@ -1,4 +1,4 @@
 <?php
 
 include ("includes/listados.php");
-pruebaFichero("datos/ordenadoNO.txt");
+leerOrdenadoC1("datos/ordenado.txt");
