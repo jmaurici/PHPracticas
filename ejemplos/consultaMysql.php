@@ -17,7 +17,7 @@
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            $sql = "SELECT * FROM books";
+            $sql = "SELECT * FROM books ORDER BY category_id";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -25,14 +25,11 @@
                 // output data of each row
                 echo "<ul>";
                 while ($rows[] = $result->fetch_assoc()) {
-                  //  echo "<li>";
-                   // foreach ($row as $k => $v)
-                        //echo  $k . " : " . $v." // " ;
-                   // echo "</li>";
+                     rows['category_id']
                 }
                 echo "</ul>";
                 //var_dump($rows);
-                echo json_encode($rows);
+                //echo json_encode($rows);
             } else {
                 echo "No hay registros";
             }
