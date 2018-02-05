@@ -37,20 +37,22 @@
                     if ($primeraVez) {
                         $primeraVez = false;
                         $cat_ant = $row['cat'];
+                        ECHO "<TR><td>".$row['cat']."</td></TR>";
                     }
                     if (($row['cat'] != $cat_ant) ){
                         $cat_ant = $row['cat'];
                         echo " <tr><td colspan='2'>subtotal </td><td>".$subtotal."</td></tr>";
+                        ECHO "<TR><td>".$row['cat']."</td></TR>";
                         $total+=$subtotal;
 
                         $subtotal=0;
                     }
                     //$primeraVez=false;
-                    echo "<tr><td>".$row['cat']."</td><td>".$row['titulo']."</td><td>".$row['precio']."</td></tr>" ;
+                    echo "<tr><TD></TD></TD><td>".$row['titulo']."</td><Td></Td><td>".$row['precio']."</td></tr>" ;
                   $subtotal += (float)$row['precio'];
 
                 }
-                echo " <tr><td colspan='2'>subtotal </td><td>".$subtotal."</td></tr>";
+                echo " <tr><td colspan='2'>subtotal </td><Td></Td><td>".$subtotal."</td></tr>";
                 $total+=$subtotal;
                 echo " <tr><td colspan='2'>total </td><td>".$total."</td></tr>";
 
