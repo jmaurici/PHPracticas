@@ -21,7 +21,7 @@
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
-                $rows = array();
+                //$rows = array();
                 // output data of each row
                 echo "<ul>";
                 while ($row = $result->fetch_assoc()) {
@@ -33,7 +33,10 @@
                 }
                 echo "</ul>";
                 //var_dump($rows);
-                //echo json_encode($rows);
+                echo json_encode($rows);
+             //   $x= xmlrpc_encode($rows);
+
+
             } else {
                 echo "No hay registros";
             }
