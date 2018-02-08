@@ -21,14 +21,14 @@
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
                     $xmlDom = new DOMDocument();
                     $xmlDom->appendChild($xmlDom->createElement('resultados'));
                     $xmlRoot = $xmlDom->documentElement;
+                while ($row = mysqli_fetch_assoc($result)) {
                     $xmlRowElementNode = $xmlDom->createElement('fila');
                     $i = 0;
                     for ($i = 0; $i < mysqli_num_fields($result); $i++) {
-                        $xmlRowElement = $xmlDom->createElement(mysqli_field_seek($result,$i));
+                        $xmlRowElement = $xmlDom->createElement(mysqli_fetch_field($result)->name);
                         $xmlText = $xmlDom->createTextNode($row[$i]);
                         $xmlRowElement->appendChild($xmlText);
                         $xmlRowElementNode->appendChild($xmlRowElement);
