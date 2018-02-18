@@ -20,6 +20,8 @@ $myXMLData =
 
 
 $xml = simplexml_load_string($myXMLData) or die("Error: Cannot create object");
-echo $xml->note[1]->heading;
+//echo $xml->note[1]->heading;
+header('Content-type:  text/xml');
+echo $xml->asXML();
 //var_dump($xml);
 ?>
