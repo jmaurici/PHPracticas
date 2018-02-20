@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "elrincon";
+$password = "";
 $dbname = "shop";
 
 // Create connection
@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM categories";
+$sql = "SELECT * FROM books order by category_id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
             $xmlRowElement->appendChild($xmlText);
             $xmlRowElementNode->appendChild($xmlRowElement);
         }
-        //  echo "<br/>";
+
         $xmlRoot->appendChild($xmlRowElementNode);
     }
 } else  echo "No hay registros";

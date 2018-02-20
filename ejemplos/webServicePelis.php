@@ -21,5 +21,6 @@ curl_close($curl);
 if ($err) {
     echo "cURL Error #:" . $err;
 } else {
+    Header("Content-type:application/json");
     echo $response;
 }

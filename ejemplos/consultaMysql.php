@@ -1,13 +1,8 @@
-<section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-    <div class="my-auto">
-        <h1 class="mb-0">Consulta a la tabla libros
 
-        </h1>
-        <div class="subheading mb-5">
             <?php
             $servername = "localhost";
             $username = "root";
-            $password = "elrincon";
+            $password = "";
             $dbname = "shop";
 
             // Create connection
@@ -23,17 +18,18 @@
             if ($result->num_rows > 0) {
                 //$rows = array();
                 // output data of each row
-                echo "<ul>";
+               // echo "<ul>";
                 while ($row = $result->fetch_assoc()) {
                     $rows[] = $row;
-                    echo "<li> ";
-                    foreach ($row as $k => $v)
-                        echo $k . "=>" . $v.", ";
-                    echo "</li> ";
+                  //  echo "<li> ";
+                //    foreach ($row as $k => $v)
+                      //  echo $k . "=>" . $v.", ";
+                   // echo "</li> ";
                 }
-                echo "</ul>";
+              //  echo "</ul>";
                 //var_dump($rows);
-                echo json_encode($rows);
+                Header("Content-type:application/json");
+                print (json_encode($rows));
              //   $x= xmlrpc_encode($rows);
 
 
@@ -42,8 +38,3 @@
             }
             $conn->close();
             ?>
-        </div>
-
-
-    </div>
-</section>

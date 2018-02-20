@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "elrincon";
+$password = "";
 $dbname = "shop";
 
 // Create connection
