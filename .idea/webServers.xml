@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3ce61092-7b14-46d7-a69b-e77bebf1dc50" name="Practicas" url="http://localhost/PHPracticas">
+        <fileTransfer port="0" mountedRoot="C:\laragon\www\PHPracticas" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

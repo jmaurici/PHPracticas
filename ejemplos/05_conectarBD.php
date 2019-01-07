@@ -7,16 +7,18 @@
             <?php
             $servername = "localhost";
             $username = "root";
-            $password = "elrincon";
-            $database="shop";
+            $password = "";
+            $database="tienda";
 
             // Create connection
             $conn = new mysqli($servername, $username, $password,$database);
+          //  var_dump($conn);
             // Check connection
             if ($conn->connect_error) {
                 die("Fallo al conectar: " . $conn->connect_error);
             }
-            // Create database
+            echo "Conexión establecida...<br/>";
+
             $sql = "select * from books";
             if ($conn->query($sql) ) {
                 echo "Consulta realizada";

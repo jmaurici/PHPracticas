@@ -1,6 +1,6 @@
 <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
     <div class="my-auto">
-        <h1 class="mb-0">Consulta con subtotales
+        <h1 class="mb-1">Consulta con subtotales a tabla de categorias
 
         </h1>
         <div class="subheading mb-5">
@@ -8,7 +8,7 @@
             $servername = "localhost";
             $username = "root";
             $password = "";
-            $dbname = "shop";
+            $dbname = "tienda";
 
             // Create connection
             $conn = new mysqli($servername, $username, $password, $dbname);

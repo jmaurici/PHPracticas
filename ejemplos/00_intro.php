@@ -3,10 +3,10 @@
           <h1 class="mb-0">Introducción a
             <span class="text-primary">PHP</span>
           </h1>
-          <div class="subheading mb-5">Ejemplos básicos sobre el lenguaje
+          <div class="subheading mb-5">Ejemplos básicos de PHP
 
           </div>
-          <p class="mb-5">Lenguaje ampliamente usado en desarrollo web</p>
+          <p class="mb-5">Lenguaje muy usado en desarrollo web</p>
           <ul class="list-inline list-social-icons mb-0">
             <li class="list-inline-item">
               <a href="#">

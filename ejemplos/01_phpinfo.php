@@ -5,7 +5,7 @@
         </h1>
         <div class="subheading mb-5">
             <?php
- echo phpinfo();
+  phpinfo();
 
             ?>
         </div>
