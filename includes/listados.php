@@ -16,28 +16,21 @@ function pruebaFichero($fich)
 function generaAssocDesdeDesordenado($rutaFichero)
 {
     $assoc = array();
+
     if (!file_exists($rutaFichero)) {
         echo "Fichero no encontrado " . $rutaFichero;
         die();
     }
 // abrir el fichero
+// debe haber un CR/LF al final ...
     $fich_desc = fopen($rutaFichero, 'r');
-    $registro = fgets($fich_desc); // lectura del primer registro
-
-    while (!feof($fich_desc)) {
+    while (($registro = fgets($fich_desc)) && !feof($fich_desc)) {
         $campos = explode("#", $registro);
         if (!isset($assoc[$campos[0]]))
             $assoc[$campos[0]] = array();
         array_push($assoc[$campos[0]], $campos[1]);
-
-            $registro = fgets($fich_desc); // leer siguiente ...
     }
-    $campos = explode("#", $registro);
-    if (!isset($assoc[$campos[0]]))
-        $assoc[$campos[0]] = array();
-    array_push($assoc[$campos[0]], $campos[1]);
     fclose($fich_desc);
-
     return $assoc;
 }
 

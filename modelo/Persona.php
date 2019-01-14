@@ -6,7 +6,7 @@
  * Time: 11:41
  */
 
-namespace Modelo;
+
 
 
     class Persona
