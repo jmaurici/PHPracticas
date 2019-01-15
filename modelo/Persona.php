@@ -1,5 +1,5 @@
 <?php
-//namespace Datos;
+namespace Datos;
     class Persona
     {
         private $nif;
@@ -7,7 +7,9 @@
         private $fecha;
         private $ecivil; //'S,C,D,A'
         private $altura;
-        protected static $contadorP=0;
+        private static $contadorP=0;
+
+
 
         
         public  function __construct($nif, $nombre, $fecha, $ecivil, $altura)
@@ -21,8 +23,14 @@
 
             self::$contadorP++;
         }
-        
 
+        /**
+         * @return int
+         */
+        public static function getContadorP(): int
+        {
+            return self::$contadorP;
+        }
         public function getNif()
         {
 

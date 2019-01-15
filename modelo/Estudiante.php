@@ -5,8 +5,7 @@
  * Date: 14/01/2019
  * Time: 12:26
  */
-
-//namespace Datos;
+namespace Datos;
 include_once ("modelo/Persona.php");
 
 class Estudiante extends Persona
@@ -21,6 +20,15 @@ class Estudiante extends Persona
         $this->idGrupo=$idGrupo;
         $this->fecha_matricula= $fechaM;
         self::$contadorE++;
-        echo get_parent_class($this);
+       // echo get_parent_class($this);
     }
+
+    /**
+     * @return int
+     */
+    public static function getContadorE(): int
+    {
+        return self::$contadorE;
+    }
+
 }
