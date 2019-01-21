@@ -7,7 +7,7 @@
             <?php
             $servername = "localhost";
             $username = "root";
-            $password = "elrincon";
+            $password = "1234";
             $dbname = "tienda";
 
             // Create connection
@@ -21,6 +21,7 @@
                        FROM books b inner join categories c  
                        on b.category_id = c.category_id 
                        ORDER BY b.category_id";
+
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -33,7 +34,7 @@
                 $contador=0;
                 $primeraVez=true;
                 while ($row = $result->fetch_assoc()) {
-                    $rows[] =$row;
+                    //$rows[] =$row;
                     if ($primeraVez) {
                         $primeraVez = false;
                         $cat_ant = $row['cat'];
@@ -58,7 +59,7 @@
 
 
                 echo "</table>";
-                $rows1=ksort($rows);
+              //  $rows1=ksort($rows);
                // var_dump($rows1);
                 //echo json_encode($rows);
             } else {

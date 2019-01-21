@@ -2,7 +2,7 @@
             <?php
             $servername = "localhost";
             $username = "root";
-            $password = "elrincon";
+            $password = "1234";
             $dbname = "tienda";
 
             // Create connection
@@ -11,27 +11,27 @@
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
-
-            $sql = "SELECT * FROM books ORDER BY category_id";
+            $sql = "SELECT * FROM categories ORDER BY category_id";
             $result = $conn->query($sql);
-
             if ($result->num_rows > 0) {
-                //$rows = array();
+                $rows = array();
                 // output data of each row
-               // echo "<ul>";
+                //echo "<ul>";
                 while ($row = $result->fetch_assoc()) {
                     $rows[] = $row;
-                  //  echo "<li> ";
-                //    foreach ($row as $k => $v)
-                      //  echo $k . "=>" . $v.", ";
-                   // echo "</li> ";
                 }
-              //  echo "</ul>";
-                //var_dump($rows);
-                Header("Content-type:application/json");
-                print (json_encode($rows));
-             //   $x= xmlrpc_encode($rows);
+                    // iterar en row
+                   // echo "<li>";
+                    //foreach ($row as $k => $v){
+                    //   print ($k . " => " .$v." ");
+                   // }
+                   // echo "</li>";
 
+             //   }
+               // echo "</ul>";
+                //var_dump($rows);
+               Header("Content-type:application/json");
+                $json = json_encode($rows);
 
             } else {
                 echo "No hay registros";

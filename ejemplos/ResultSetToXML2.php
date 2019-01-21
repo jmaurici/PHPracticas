@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
-$dbname = "shop";
+$password = "1234";
+$dbname = "tienda";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,8 +17,8 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $myXMLData = "<?xml version='1.0' encoding='UTF-8'?>";
     $myXMLData .= "<resultados>";
-
-    while ($row = mysqli_fetch_assoc($result)) {
+   // while ($row = mysqli_fetch_assoc($result)) {
+    while ($row = $result->fetch_assoc()) {
         $myXMLData .= "<fila>";
         foreach ($row as $k => $v) {
 

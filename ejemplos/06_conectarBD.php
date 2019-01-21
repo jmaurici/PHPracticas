@@ -12,6 +12,7 @@
 
             // Create connection
             $conn = new mysqli($servername, $username, $password,$database);
+
           //  var_dump($conn);
             // Check connection
             if ($conn->connect_error) {
@@ -19,7 +20,7 @@
             }
             echo "Conexión establecida...<br/>";
 
-            $sql = "select * from books";
+            $sql = "select * from booksx";
             if ($conn->query($sql) ) {
                 echo "Consulta realizada";
             } else {

@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
-$dbname = "shop";
+$password = "1234";
+$dbname = "tienda";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -16,10 +16,10 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     $xmlDom = new DOMDocument();
-    $xmlDom->appendChild($xmlDom->createElement('resultados'));
+    $xmlDom->appendChild($xmlDom->createElement('registros'));
     $xmlRoot = $xmlDom->documentElement;
     while ($row = mysqli_fetch_assoc($result)) {
-        $xmlRowElementNode = $xmlDom->createElement('fila');
+        $xmlRowElementNode = $xmlDom->createElement('registro');
         foreach ($row as $k => $v) {
             $xmlRowElement = $xmlDom->createElement($k);
             // echo $k . " => " . $v . " , ";
@@ -32,6 +32,7 @@ if ($result->num_rows > 0) {
     }
 } else  echo "No hay registros";
 $conn->close();
+
 header('Content-type:  text/xml');
 echo $xmlDom->saveXML();
 ?>

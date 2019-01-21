@@ -10,7 +10,9 @@ $per1 = new P("44333211G", "Paco","19930215",'S',183);
 $est1 = new Datos\Estudiante(123,"20180612","44333211G", "Paco","19930215",'S',183);
 
 
-echo "Numero de personas : ". P::getContadorP()."<BR/>";
-echo "Numero de estudiantes :". Datos\Estudiante::getContadorE();
+//echo "Numero de personas : ". P::getContadorP()."<BR/>";
+//echo "Numero de estudiantes :". Datos\Estudiante::getContadorE();
+
+printf ("%d -> %s", $per1->getAltura() , $per1->__toString());
 
 //var_dump($est1);
