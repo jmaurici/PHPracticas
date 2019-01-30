@@ -5,15 +5,10 @@
         </h1>
         <div class="subheading mb-5">
             <?php
-
+            require "./includes/bd.php";
+            $db = new DB();
+            $conn=$db->getConexionPDO();
             try {
-                $servername = "localhost";
-                $username = "root";
-                $password = "1234";
-                $database = "tienda";
-
-                $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $categoria = 1;
                 $sentencia = $conn->prepare("select * from books where category_id = :xyz");

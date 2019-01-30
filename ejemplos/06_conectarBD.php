@@ -5,16 +5,11 @@
         </h1>
         <div class="subheading mb-5">
             <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "1234";
-            $database="tienda";
+           require "./includes/bd.php";
+            $db = new DB();
+            $conn=$db->getConexionMysqli();
 
-            // Create connection
-            $conn = new mysqli($servername, $username, $password,$database);
 
-          //  var_dump($conn);
-            // Check connection
             if ($conn->connect_error) {
                 die("Fallo al conectar: " . $conn->connect_error);
             }
